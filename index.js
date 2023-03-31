@@ -8,6 +8,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 require('dotenv').config()
 const serviceRoute = require('./routes/services.route')
 const productRoute = require('./routes/product.route')
+const orderRoute = require('./routes/order.route')
 
 
 // middleware
@@ -21,6 +22,7 @@ dbConnect();
 // Route
 app.use("/services", serviceRoute)
 app.use("/product", productRoute)
+app.use("/orders", orderRoute)
 
 
 app.get('/', (req, res) => {
